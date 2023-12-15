@@ -7,6 +7,7 @@ import horse from "../imgs/horse.svg";
 import heart from "../imgs/heart.svg";
 import "./animalShow.css";
 import { useState } from "react";
+
 export const AnimalShow = ({ animal }) => {
   const [clicks, setClicks] = useState(0);
 
