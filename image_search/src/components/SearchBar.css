@@ -1,0 +1,17 @@
+.form {
+  width: 100%;
+  padding: 20px;
+  background-color: rgba(128, 128, 128, 0.237);
+}
+.input {
+  width: 300px;
+  padding: 12px;
+  margin-left: 35%;
+  border-radius: 10px;
+  border: none;
+  border: 1px solid gray;
+}
+
+.input:focus {
+  outline: none;
+}

@@ -1,0 +1,12 @@
+import { ImageCard } from "./imgeCard";
+
+export const ImageList = ({ imagData }) => {
+  console.log(imagData);
+  return (
+    <div className="cardContainer">
+      {imagData.map((imag) => (
+        <ImageCard key={imag.id} imag={imag} />
+      ))}
+    </div>
+  );
+};
