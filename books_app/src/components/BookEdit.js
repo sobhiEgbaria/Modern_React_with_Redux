@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-export const BookEdit = ({ handlerBookEdit, bookId, handelEditClick }) => {
-  const [title, setTitle] = useState("");
+export const BookEdit = ({ editBookById, book, handelEditClick }) => {
+  const [title, setTitle] = useState(book.title);
 
   const handleSaveClick = (e) => {
-    handlerBookEdit(bookId, title);
+    editBookById(book.id, title);
     handelEditClick();
   };
 

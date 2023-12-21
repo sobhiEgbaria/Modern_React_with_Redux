@@ -9,17 +9,17 @@ function App() {
     setBooks([...books, { id: Date.now(), title: title }]);
   };
 
-  const handlerBookEdit = (id, title) => {
+  const editBookById = (id, newTitle) => {
     const updatedBooks = books.map((book) => {
       if (book.id === id) {
-        return { ...book, title: title };
+        return { ...book, title: newTitle };
       }
       return book;
     });
     setBooks([...updatedBooks]);
   };
 
-  const handlerBookDelete = (id) => {
+  const deleteBookById = (id) => {
     const updatedBooks = books.filter((book) => {
       return book.id !== id;
     });
@@ -30,10 +30,12 @@ function App() {
   return (
     <>
       <div className="app">
+        <h1>Books List</h1>
+
         <BooksList
           books={books}
-          handlerBookDelete={handlerBookDelete}
-          handlerBookEdit={handlerBookEdit}
+          deleteBookById={deleteBookById}
+          editBookById={editBookById}
         />
         <BookCreate handlerCreateBook={handlerCreateBook} />
       </div>

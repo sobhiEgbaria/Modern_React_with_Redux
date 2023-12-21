@@ -1,6 +1,6 @@
 import { BookCard } from "./BookCard";
 
-export const BooksList = ({ books, handlerBookDelete, handlerBookEdit }) => {
+export const BooksList = ({ books, deleteBookById, editBookById }) => {
   return (
     <>
       <div className="book-list">
@@ -9,8 +9,8 @@ export const BooksList = ({ books, handlerBookDelete, handlerBookEdit }) => {
             <BookCard
               book={book}
               key={book.id}
-              handlerBookDelete={handlerBookDelete}
-              handlerBookEdit={handlerBookEdit}
+              deleteBookById={deleteBookById}
+              editBookById={editBookById}
             />
           );
         })}

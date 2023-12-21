@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { BookEdit } from "./BookEdit";
-export const BookCard = ({ book, handlerBookDelete, handlerBookEdit }) => {
+export const BookCard = ({ book, deleteBookById, editBookById }) => {
   const [content, setContent] = useState(true);
 
   const handelDeleteClick = (e) => {
-    handlerBookDelete(book.id);
+    deleteBookById(book.id);
   };
 
   const handelEditClick = () => {
@@ -14,12 +14,16 @@ export const BookCard = ({ book, handlerBookDelete, handlerBookEdit }) => {
   return (
     <>
       <div className="book-show">
+        <img
+          src={`https://picsum.photos/seed/${book.id}/200/150`}
+          alt="Books"
+        />
         {content ? (
           book.title
         ) : (
           <BookEdit
-            handlerBookEdit={handlerBookEdit}
-            bookId={book.id}
+            editBookById={editBookById}
+            book={book}
             handelEditClick={handelEditClick}
           />
         )}
