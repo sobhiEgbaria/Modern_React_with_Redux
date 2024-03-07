@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import SeasonsDisplay from "./components/SeasonsDisplay";
-import Spinner from "./components/spinner";
+import SeasonsDisplay from "../src/components/SeasonsDisplay";
+import Spinner from "../src/components/spinner";
 
 class SeasonsApp extends Component {
   constructor(props) {
