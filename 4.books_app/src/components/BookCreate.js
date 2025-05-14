@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import BookContext from "../context/books";
 
-export const BookCreate = ({ handlerCreateBook }) => {
+export const BookCreate = () => {
   const [title, setTitle] = useState("");
-
+  const { handlerCreateBook } = useContext(BookContext);
   // this function handling the form, calling the handlerCreateBook as props, and clear the state
   const handleSubmit = (event) => {
     event.preventDefault();

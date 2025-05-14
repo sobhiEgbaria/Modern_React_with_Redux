@@ -1,6 +1,9 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { BookEdit } from "./BookEdit";
-export const BookCard = ({ book, deleteBookById, editBookById }) => {
+import BookContext from "../context/books";
+
+export const BookCard = ({ book }) => {
+  const { deleteBookById } = useContext(BookContext);
   const [content, setContent] = useState(true);
 
   const handelDeleteClick = (e) => {
@@ -21,11 +24,7 @@ export const BookCard = ({ book, deleteBookById, editBookById }) => {
         {content ? (
           book.title
         ) : (
-          <BookEdit
-            editBookById={editBookById}
-            book={book}
-            handelEditClick={handelEditClick}
-          />
+          <BookEdit book={book} handelEditClick={handelEditClick} />
         )}
         <div className="actions">
           <button onClick={handelEditClick} className="edit">

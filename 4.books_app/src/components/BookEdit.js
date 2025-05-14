@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import BookContext from "../context/books";
 
-export const BookEdit = ({ editBookById, book, handelEditClick }) => {
+export const BookEdit = ({ book, handelEditClick }) => {
+  const { editBookById } = useContext(BookContext);
   const [title, setTitle] = useState(book.title);
 
   const handleSaveClick = (e) => {
