@@ -1,5 +1,12 @@
 import React from "react";
+import Accordion from "../components/Accordion";
 
-export const AccordionPage = () => {
-  return <div>AccordionPage</div>;
+const AccordionPage = () => {
+  return (
+    <>
+      <Accordion />
+    </>
+  );
 };
+
+export default AccordionPage;
