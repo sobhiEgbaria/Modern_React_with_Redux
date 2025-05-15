@@ -1,9 +1,9 @@
-import { useState } from "react";
+import ButtonPage from "./pages/ButtonPage";
 
 function App() {
   return (
     <>
-      <h1>hi</h1>
+      <ButtonPage />
     </>
   );
 }
