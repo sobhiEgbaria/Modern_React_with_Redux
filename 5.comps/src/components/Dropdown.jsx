@@ -4,7 +4,7 @@ const Dropdown = ({ options }) => {
   return (
     <>
       {options.map((option) => {
-        return <div key={Math.random() * 100}>{option.label}</div>;
+        return <div key={option.value}>{option.label}</div>;
       })}
     </>
   );
