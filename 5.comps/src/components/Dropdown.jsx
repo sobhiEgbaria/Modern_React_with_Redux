@@ -27,17 +27,17 @@ const Dropdown = ({ options, value, onChange }) => {
   });
 
   return (
-    <div className="w-48 relative ">
-      <div
+    <div className="w-48 relative">
+      <Panel
         className="flex justify-between item-center cursor-pointer"
         onClick={handelClick}
       >
         {value}
-        <Panel />
         <GoChevronDown className="text-lg" />
-      </div>
-
-      {isOpen ? <div className="absolute top-full">{renderOptions}</div> : null}
+      </Panel>
+      {isOpen ? (
+        <Panel className="absolute top-full">{renderOptions}</Panel>
+      ) : null}
     </div>
   );
 };
