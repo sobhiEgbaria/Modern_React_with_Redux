@@ -27,13 +27,13 @@ const DropdownPage = () => {
   };
 
   return (
-    <>
+    <div className="flex">
       <Dropdown
         options={options}
         value={selectValue}
         onChange={handelSelectValue}
       />
-    </>
+    </div>
   );
 };
 
