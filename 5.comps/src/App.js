@@ -5,9 +5,9 @@ import DropdownPge from "./pages/DropdownPge";
 function App() {
   return (
     <>
-      {/* <ButtonPage /> */}
-      {/* <AccordionPage /> */}
-      <DropdownPge />
+      {/* <ButtonPage />
+      <AccordionPage />
+      <DropdownPge /> */}
     </>
   );
 }
