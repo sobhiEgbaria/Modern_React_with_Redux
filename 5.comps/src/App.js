@@ -3,6 +3,7 @@ import AccordionPage from "./pages/AccordionPage";
 import DropdownPge from "./pages/DropdownPge";
 import ModalPage from "./pages/ModalPage";
 import TablePage from "./pages/TablePage";
+import CounterPage from "./pages/counterPage";
 
 function App() {
   return (
@@ -11,8 +12,9 @@ function App() {
       <AccordionPage />
       <DropdownPge /> 
       <ModalPage />
-      */}
       <TablePage />
+      */}
+      <CounterPage initialCount={10} />
     </>
   );
 }
