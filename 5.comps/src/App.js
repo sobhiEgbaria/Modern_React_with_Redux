@@ -4,6 +4,7 @@ import DropdownPge from "./pages/DropdownPge";
 import ModalPage from "./pages/ModalPage";
 import TablePage from "./pages/TablePage";
 import CounterPage from "./pages/counterPage";
+import CounterReducer from "./pages/Counter_reducer";
 
 function App() {
   return (
@@ -12,9 +13,10 @@ function App() {
       <AccordionPage />
       <DropdownPge /> 
       <ModalPage />
+      <CounterPage initialCount={10} />
       <TablePage />
       */}
-      <CounterPage initialCount={10} />
+      <CounterReducer initialCount={10} />
     </>
   );
 }
