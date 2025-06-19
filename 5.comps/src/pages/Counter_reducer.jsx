@@ -2,41 +2,43 @@ import { useReducer } from "react";
 import Button from "../components/Button";
 import Panel from "../css_components/Panel";
 
+const INCREMENT_COUNTER = "increment-counter";
+const DECREMENT_COUNTER = "decrement-counter";
+const CHANGE_VALUE = "change-value";
+const ADD_VALUE = "add-value";
+
 const reducer = (state, action) => {
-  if (action.type == "increment-counter") {
-    return {
-      ...state,
-      counter: state.counter + 1,
-    };
-  }
+  switch (action.type) {
+    case INCREMENT_COUNTER:
+      return {
+        ...state,
+        counter: state.counter + 1,
+      };
 
-  if (action.type == "decrement-counter") {
-    return {
-      ...state,
-      counter: state.counter - 1,
-    };
-  }
+    case DECREMENT_COUNTER:
+      return {
+        ...state,
+        counter: state.counter - 1,
+      };
 
-  if (action.type == "change-value") {
-    return {
-      ...state,
-      valueToAdd: action.payload,
-    };
-  }
+    case CHANGE_VALUE:
+      return {
+        ...state,
+        valueToAdd: action.payload,
+      };
 
-  if (action.type == "add-value") {
-    return {
-      ...state,
-      counter: state.counter + state.valueToAdd,
-      valueToAdd: 0,
-    };
+    case ADD_VALUE:
+      return {
+        ...state,
+        counter: state.counter + state.valueToAdd,
+        valueToAdd: 0,
+      };
+    default:
+      return state;
   }
 };
 
 const Counter_reducer = ({ initialCount }) => {
-  // const [counter, setCounter] = useState(initialCount);
-  // const [valueToAdd, setValueToAdd] = useState("");
-
   const [state, dispatch] = useReducer(reducer, {
     counter: initialCount,
     valueToAdd: 0,
@@ -44,26 +46,26 @@ const Counter_reducer = ({ initialCount }) => {
 
   const incrementHandler = () => {
     dispatch({
-      type: "increment-counter",
+      type: INCREMENT_COUNTER,
     });
   };
 
   const decrementHandler = () => {
     dispatch({
-      type: "decrement-counter",
+      type: DECREMENT_COUNTER,
     });
   };
   const onChangeHandler = (event) => {
     const value = parseInt(event.target.value) || 0;
     dispatch({
-      type: "change-value",
+      type: CHANGE_VALUE,
       payload: value,
     });
   };
   const addValueHandler = (event) => {
     event.preventDefault();
     dispatch({
-      type: "add-value",
+      type: ADD_VALUE,
     });
   };
 
