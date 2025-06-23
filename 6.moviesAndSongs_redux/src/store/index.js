@@ -1,7 +1,7 @@
 import { configureStore, createSlice, createAction } from "@reduxjs/toolkit";
 import { moviesReducer, addMovie, removeMovie } from "./slices/moviesSlice";
 import { songsReducer, addSong, removeSong } from "./slices/songsSlice";
-import { reset } from "../store/action";
+import { reset } from "./action";
 const store = configureStore({
   reducer: {
     songs: songsReducer,
